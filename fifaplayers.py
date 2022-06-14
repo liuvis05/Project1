@@ -1,5 +1,5 @@
 import pandas as pd
 
-df = pd.read_csv (r'Path where the CSV file is stored\File name.csv')
+df = pd.read_csv (r'players_20.csv')
 print (df)
 
