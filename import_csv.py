@@ -47,24 +47,15 @@ df = pd.read_csv (r'D:\Users\yaima\Documents\Projects\players_20.csv')
 # print("\n")
 
 # Top 5 countries and their number of players, try to fill green color in bars.
-# print("\n")
-# gr = df.groupby('nationality').count()
-# df5 = pd.DataFrame(gr, columns= ['short_name'])
-# plotdata = df5.nlargest(5, 'short_name')
-# print(plotdata)
-# plotdata = plotdata.plot(df5, plotdata, color='g')
-# print(plotdata.plot(kind="bar"))
-# print("\n")
+print("\n")
 countries = df.groupby(['nationality'], as_index=False)['short_name'].count()
 country_bar = countries.nlargest(5,'short_name')
-
 print(country_bar)
-# country_bar = plotdata.head()
-# print(country_bar)
 plt.figure(figsize=(15,6))
 plt.bar(country_bar['nationality'],country_bar['short_name'],color='green')
 plt.xlabel('Nationality', size = 15)
 plt.ylabel('Number of Players', size=15)
 plt.title('Players per Country')
 plt.show()
+
 
